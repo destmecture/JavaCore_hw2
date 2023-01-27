@@ -1,24 +1,41 @@
 package transport;
 
 import drivers.DriverD;
+import Enum.*;
 
 public class Bus extends Transport{
+    private PassengerSeats passengerSeats;
 
     public Bus(String brand,
                String model,
                double enginePower, DriverD driver) {
         super(brand, model, enginePower,driver);
+        this.passengerSeats = getPassengerSeats();
 
     }
 
+    public PassengerSeats getPassengerSeats() {
+        return passengerSeats;
+    }
+
+    public void setPassengerSeats(PassengerSeats passengerSeats) {
+        this.passengerSeats = passengerSeats;
+    }
+    public void printType() {
+        if(passengerSeats==null){
+            System.out.println("Данных по транспортному средству недостаточно");
+        }else{
+            System.out.println(passengerSeats);
+        }
+    }
 
     @Override
-    void startMove() {
+    public void startMove() {
         System.out.println("Bus started");
     }
 
     @Override
-    void finish() {
+    public void finish() {
         System.out.println("Bus finished");
     }
 

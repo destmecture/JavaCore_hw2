@@ -1,26 +1,42 @@
 package transport;
 
 import drivers.DriverB;
-
+import Enum.*;
 public class Car extends Transport{
 
+    private CarBodyType carBodyType;
 
     public Car(String brand,
                String model,
                double enginePower,
                DriverB driver) {
         super(brand, model, enginePower, driver);
+        this.carBodyType = getCarBodyType();
 
     }
 
+    public CarBodyType getCarBodyType() {
+        return carBodyType;
+    }
+
+    public void setCarBodyType(CarBodyType carBodyType) {
+        this.carBodyType = carBodyType;
+    }
+    public void printType() {
+        if(carBodyType==null){
+            System.out.println("Данных по транспортному средству недостаточно");
+        }else{
+            System.out.println(carBodyType);
+        }
+    }
 
     @Override
-    void startMove() {
+    public void startMove() {
         System.out.println("Car started");
     }
 
     @Override
-    void finish() {
+    public void finish() {
         System.out.println("Car finished");
     }
 
