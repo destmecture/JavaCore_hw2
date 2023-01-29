@@ -8,9 +8,9 @@ public class Bus extends Transport{
 
     public Bus(String brand,
                String model,
-               double enginePower, DriverD driver) {
+               double enginePower, DriverD driver, PassengerSeats passengerSeats) {
         super(brand, model, enginePower,driver);
-        this.passengerSeats = getPassengerSeats();
+        this.passengerSeats = passengerSeats;
 
     }
 

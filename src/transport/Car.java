@@ -9,9 +9,9 @@ public class Car extends Transport{
     public Car(String brand,
                String model,
                double enginePower,
-               DriverB driver) {
+               DriverB driver, CarBodyType carBodyType) {
         super(brand, model, enginePower, driver);
-        this.carBodyType = getCarBodyType();
+        this.carBodyType = carBodyType;
 
     }
 

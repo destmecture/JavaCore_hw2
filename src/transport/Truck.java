@@ -8,9 +8,9 @@ public class Truck extends Transport{
     private WeightCapacity weightCapacity;
     public Truck(String brand,
                  String model,
-                 double enginePower, DriverC driver) {
+                 double enginePower, DriverC driver, WeightCapacity weightCapacity) {
         super(brand, model, enginePower, driver);
-        this.weightCapacity = getWeightCapacity();
+        this.weightCapacity = weightCapacity;
     }
 
     public WeightCapacity getWeightCapacity() {

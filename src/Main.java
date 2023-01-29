@@ -15,26 +15,14 @@ public class Main {
         DriverC driverC = new DriverC("Alexey", true, 7);
         DriverD driverD = new DriverD("Sergey", true, 10);
 
-        Car car = new Car("Alpha", "Romeo", 2.4, driverB);
-        Truck truck = new Truck("Scania", "Odin", 5.5, driverC);
-        Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD);
-        Bus bus2 = new Bus("Mercedes", "sprinter", 2.2, driverD);
+        Car car = new Car("Alpha", "Romeo", 2.4, driverB, CarBodyType.Coupe);
+        Truck truck = new Truck("Scania", "Odin", 5.5, driverC, WeightCapacity.N1);
+        Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD, PassengerSeats.EXTRALARGE);
+        Bus bus2 = new Bus("Mercedes", "sprinter", 2.2, driverD, null);
 
         getInfo(car);
         getInfo(truck);
         getInfo(bus);
-
-
-        WeightCapacity truckWeightCapacity = WeightCapacity.N3;
-        truck.setWeightCapacity(truckWeightCapacity);
-
-
-        PassengerSeats busSeats = PassengerSeats.EXTRASMALL;
-        bus.setPassengerSeats(busSeats);
-
-
-        CarBodyType carBodyType = CarBodyType.Coupe;
-        car.setCarBodyType(carBodyType);
 
 
 
