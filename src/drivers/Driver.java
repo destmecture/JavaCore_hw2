@@ -1,6 +1,6 @@
 package drivers;
 
-import static transport.ValidationUtilities.*;
+import static utilities.ValidationUtilities.*;
 public abstract class Driver {
     private String name;
     private boolean hasDriverLicence;

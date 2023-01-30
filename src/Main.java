@@ -1,5 +1,13 @@
-import drivers.*;
-import transport.*;
+import Enum.*;
+import drivers.DriverB;
+import drivers.DriverC;
+import drivers.DriverD;
+import transport.Bus;
+import transport.Car;
+import transport.Transport;
+import transport.Truck;
+
+
 
 public class Main {
     public static void main(String[] args) {
@@ -7,13 +15,22 @@ public class Main {
         DriverC driverC = new DriverC("Alexey", true, 7);
         DriverD driverD = new DriverD("Sergey", true, 10);
 
-        Car car = new Car("Alpha", "Romeo", 2.4, driverB);
-        Truck truck = new Truck("Scania", "Odin", 5.5, driverC);
-        Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD);
+        Car car = new Car("Alpha", "Romeo", 2.4, driverB, CarBodyType.Coupe);
+        Truck truck = new Truck("Scania", "Odin", 5.5, driverC, WeightCapacity.N1);
+        Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD, PassengerSeats.EXTRALARGE);
+        Bus bus2 = new Bus("Mercedes", "sprinter", 2.2, driverD, null);
 
         getInfo(car);
         getInfo(truck);
         getInfo(bus);
+
+
+
+        truck.printType();
+        bus.printType();
+        car.printType();
+        bus2.printType();
+
 
     }
 

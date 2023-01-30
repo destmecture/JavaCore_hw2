@@ -1,25 +1,42 @@
 package transport;
 
-import drivers.DriverB;
 import drivers.DriverC;
+import Enum.*;
 
 public class Truck extends Transport{
 
-
+    private WeightCapacity weightCapacity;
     public Truck(String brand,
                  String model,
-                 double enginePower, DriverC driver) {
+                 double enginePower, DriverC driver, WeightCapacity weightCapacity) {
         super(brand, model, enginePower, driver);
+        this.weightCapacity = weightCapacity;
     }
 
+    public WeightCapacity getWeightCapacity() {
+        return weightCapacity;
+    }
+
+    public void setWeightCapacity(WeightCapacity weightCapacity) {
+        this.weightCapacity = weightCapacity;
+    }
 
     @Override
-    void startMove() {
+    public void printType() {
+        if(weightCapacity==null){
+            System.out.println("Данных по транспортному средству недостаточно");
+        }else{
+            System.out.println(weightCapacity);
+        }
+    }
+
+    @Override
+    public void startMove() {
         System.out.println("Truck started");
     }
 
     @Override
-    void finish() {
+    public void finish() {
         System.out.println("Truck finished");
     }
 
@@ -40,5 +57,6 @@ public class Truck extends Transport{
         int speed = (int)(Math.random() * ((100 - 80) + 1) + 80);
         System.out.println("Max speed for truck is = "+speed);
     }
+
 
 }

@@ -1,4 +1,4 @@
-package transport;
+package utilities;
 
 public class ValidationUtilities {
     public static String checkStringValidation(String input) {
@@ -31,4 +31,5 @@ public class ValidationUtilities {
             return input;
         }
     }
+
 }

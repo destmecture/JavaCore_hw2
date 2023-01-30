@@ -1,8 +1,7 @@
 package transport;
 
 import drivers.Driver;
-
-import static transport.ValidationUtilities.*;
+import static utilities.ValidationUtilities.*;
 public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
@@ -42,6 +41,8 @@ public abstract class Transport implements Competing {
     abstract void startMove();
 
     abstract void finish();
+
+    abstract void printType();
 
 
 }
