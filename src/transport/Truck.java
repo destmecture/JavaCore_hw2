@@ -22,6 +22,17 @@ public class Truck extends Transport{
     }
 
     @Override
+    public void passDiagnostic() {
+        try {
+            if (this.getClass() != Truck.class) {
+                throw new TransportTypeException("Автобусы не должны проходить диагностику");
+            }
+            System.out.println("Грузовик продиагностирован");
+        } catch (TransportTypeException a) {
+            System.err.println(a.getMessage());
+        }
+    }
+    @Override
     public void printType() {
         if(weightCapacity==null){
             System.out.println("Данных по транспортному средству недостаточно");

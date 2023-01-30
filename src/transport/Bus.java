@@ -3,7 +3,8 @@ package transport;
 import drivers.DriverD;
 import Enum.*;
 
-public class Bus extends Transport{
+
+public class Bus extends Transport {
     private PassengerSeats passengerSeats;
 
     public Bus(String brand,
@@ -26,6 +27,20 @@ public class Bus extends Transport{
             System.out.println("Данных по транспортному средству недостаточно");
         }else{
             System.out.println(passengerSeats);
+        }
+    }
+
+    @Override
+    public void passDiagnostic() {
+        try {
+            if (this.getClass() == Bus.class) {
+                throw new TransportTypeException("Автобусы не должны проходить диагностику");
+
+            }
+            System.out.println("Транспорт продиагностирован");
+        } catch (TransportTypeException a) {
+            System.err.println(a.getMessage());
+            a.printStackTrace();
         }
     }
 

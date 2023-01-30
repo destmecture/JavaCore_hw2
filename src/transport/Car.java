@@ -31,6 +31,18 @@ public class Car extends Transport{
     }
 
     @Override
+    public void passDiagnostic() {
+        try {
+            if (this.getClass() != Car.class) {
+                throw new TransportTypeException("Автобусы не должны проходить диагностику");
+            }
+            System.out.println("Автомобиль продиагностирован");
+        } catch (TransportTypeException a) {
+            System.err.println(a.getMessage());
+        }
+    }
+
+    @Override
     public void startMove() {
         System.out.println("Car started");
     }

@@ -1,11 +1,6 @@
 import Enum.*;
-import drivers.DriverB;
-import drivers.DriverC;
-import drivers.DriverD;
-import transport.Bus;
-import transport.Car;
-import transport.Transport;
-import transport.Truck;
+import drivers.*;
+import transport.*;
 
 
 
@@ -23,13 +18,19 @@ public class Main {
         getInfo(car);
         getInfo(truck);
         getInfo(bus);
-
-
+        System.out.println("______________");
 
         truck.printType();
         bus.printType();
         car.printType();
         bus2.printType();
+        System.out.println("______________");
+
+        car.passDiagnostic();
+        truck.passDiagnostic();
+        bus.passDiagnostic();
+
+
 
 
     }
