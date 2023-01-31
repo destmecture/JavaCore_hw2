@@ -33,13 +33,8 @@ public class Bus extends Transport {
     @Override
     public void passDiagnostic() {
         try {
-            if (this.getClass() == Bus.class) {
-                throw new TransportTypeException("Автобусы не должны проходить диагностику");
-
-            }
-            System.out.println("Транспорт продиагностирован");
+            throw new TransportTypeException("Автобусы не должны проходить диагностику");
         } catch (TransportTypeException a) {
-            System.err.println(a.getMessage());
             a.printStackTrace();
         }
     }

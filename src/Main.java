@@ -14,7 +14,6 @@ public class Main {
         Truck truck = new Truck("Scania", "Odin", 5.5, driverC, WeightCapacity.N1);
         Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD, PassengerSeats.EXTRALARGE);
         Bus bus2 = new Bus("Mercedes", "sprinter", 2.2, driverD, null);
-
         getInfo(car);
         getInfo(truck);
         getInfo(bus);
@@ -26,9 +25,10 @@ public class Main {
         bus2.printType();
         System.out.println("______________");
 
+        bus.passDiagnostic();
         car.passDiagnostic();
         truck.passDiagnostic();
-        bus.passDiagnostic();
+
 
 
 
