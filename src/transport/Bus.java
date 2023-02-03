@@ -1,7 +1,9 @@
 package transport;
 
+import Enum.PassengerSeats;
 import drivers.DriverD;
-import Enum.*;
+
+import java.util.List;
 
 
 public class Bus extends Transport {
@@ -9,8 +11,11 @@ public class Bus extends Transport {
 
     public Bus(String brand,
                String model,
-               double enginePower, DriverD driver, PassengerSeats passengerSeats) {
-        super(brand, model, enginePower,driver);
+               double enginePower,
+               DriverD driver,
+               PassengerSeats passengerSeats,
+               List mechanicsList) {
+        super(brand, model, enginePower,driver, mechanicsList);
         this.passengerSeats = passengerSeats;
 
     }

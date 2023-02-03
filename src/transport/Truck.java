@@ -1,15 +1,20 @@
 package transport;
 
+import Enum.WeightCapacity;
 import drivers.DriverC;
-import Enum.*;
+
+import java.util.List;
 
 public class Truck extends Transport{
 
     private WeightCapacity weightCapacity;
     public Truck(String brand,
                  String model,
-                 double enginePower, DriverC driver, WeightCapacity weightCapacity) {
-        super(brand, model, enginePower, driver);
+                 double enginePower,
+                 DriverC driver,
+                 WeightCapacity weightCapacity,
+                 List mechanicsList) {
+        super(brand, model, enginePower, driver, mechanicsList);
         this.weightCapacity = weightCapacity;
     }
 
