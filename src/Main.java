@@ -1,11 +1,6 @@
 import Enum.*;
-import drivers.DriverB;
-import drivers.DriverC;
-import drivers.DriverD;
-import transport.Bus;
-import transport.Car;
-import transport.Transport;
-import transport.Truck;
+import drivers.*;
+import transport.*;
 
 
 
@@ -19,17 +14,23 @@ public class Main {
         Truck truck = new Truck("Scania", "Odin", 5.5, driverC, WeightCapacity.N1);
         Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD, PassengerSeats.EXTRALARGE);
         Bus bus2 = new Bus("Mercedes", "sprinter", 2.2, driverD, null);
-
         getInfo(car);
         getInfo(truck);
         getInfo(bus);
-
-
+        System.out.println("______________");
 
         truck.printType();
         bus.printType();
         car.printType();
         bus2.printType();
+        System.out.println("______________");
+
+        bus.passDiagnostic();
+        car.passDiagnostic();
+        truck.passDiagnostic();
+
+
+
 
 
     }

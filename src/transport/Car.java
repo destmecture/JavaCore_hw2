@@ -31,6 +31,11 @@ public class Car extends Transport{
     }
 
     @Override
+    public void passDiagnostic() {
+        System.out.println("Автомобиль продиагностирован");
+    }
+
+    @Override
     public void startMove() {
         System.out.println("Car started");
     }

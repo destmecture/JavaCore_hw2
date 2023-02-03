@@ -44,5 +44,7 @@ public abstract class Transport implements Competing {
 
     abstract void printType();
 
+    public abstract void passDiagnostic();
+
 
 }

@@ -22,6 +22,10 @@ public class Truck extends Transport{
     }
 
     @Override
+    public void passDiagnostic() {
+        System.out.println("Грузовик продиагностирован");
+    }
+    @Override
     public void printType() {
         if(weightCapacity==null){
             System.out.println("Данных по транспортному средству недостаточно");
