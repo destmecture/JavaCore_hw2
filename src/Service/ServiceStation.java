@@ -12,11 +12,7 @@ public class ServiceStation {
             transportQueue.offer(transport);
             System.out.println("Транспортное средство " + transport.getBrand() + " " + transport.getModel() + " встало в очередь");
         } else {
-            try {
-                throw new IncorrectTransportType("Автобусы не нуждаются в ТО перед заездом");
-            } catch (IncorrectTransportType a) {
-                System.err.println(a.getMessage());
-            }
+            transport.passDiagnostic();
         }
     }
 

@@ -44,10 +44,12 @@ public class Mechanic {
     //endregion
 
     public void performMaintenance(Transport transport) {
-        System.out.println("Механик "+getName()+" "+getSurName()+" провел техобслуживание транспорта "+transport.getBrand()+" "+transport.getModel()+", класса "+transport.getClass());
+        System.out.println("Механик "+getName()+" "+getSurName()+" провел техобслуживание транспорта "
+                +transport.getBrand()+" "+transport.getModel()+", класса "+transport.getClass());
     }
 
     public void fixCar(Transport transport) {
-        System.out.println("Механик "+getName()+" "+getSurName()+" починин транспортное средство "+transport.getBrand()+" "+transport.getModel()+", класса "+transport.getClass());
+        System.out.println("Механик "+getName()+" "+getSurName()+" починин транспортное средство "
+                +transport.getBrand()+" "+transport.getModel()+", класса "+transport.getClass());
     }
 }
