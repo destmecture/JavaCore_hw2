@@ -1,10 +1,20 @@
-import Enum.*;
-import Service.*;
-import drivers.*;
-import transport.*;
+import Enum.CarBodyType;
+import Enum.PassengerSeats;
+import Enum.WeightCapacity;
+import Service.Mechanic;
+import Service.ServiceStation;
+import drivers.DriverB;
+import drivers.DriverC;
+import drivers.DriverD;
+import transport.Bus;
+import transport.Car;
+import transport.Transport;
+import transport.Truck;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Main {
@@ -29,6 +39,20 @@ public class Main {
         transportList.add(truck);
         transportList.add(bus);
         transportList.add(bus2);
+
+        Map<Transport, StringBuilder> carAndMechanics = new HashMap<>();
+        carAndMechanics.put(car, car.getMechanicsList());
+        carAndMechanics.put(truck, truck.getMechanicsList());
+        carAndMechanics.put(bus, bus.getMechanicsList());
+        carAndMechanics.put(bus2, bus2.getMechanicsList());
+
+        for (Map.Entry<Transport, StringBuilder> out : carAndMechanics.entrySet()) {
+            System.out.println(out.getKey().getBrand()+" "+out.getKey().getModel()+" Уникальный номер транспорта: "
+                    +out.getKey()+" Список механиков, закрепленных за данным авто: "
+                    +out.getValue());
+        }
+        System.out.println("______________");
+
 
         mechanics.get(0).performMaintenance(car);                //Проведение ТО
         mechanics.get(1).performMaintenance(truck);
