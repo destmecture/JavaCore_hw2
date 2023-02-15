@@ -11,10 +11,7 @@ import transport.Car;
 import transport.Transport;
 import transport.Truck;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Main {
@@ -22,6 +19,7 @@ public class Main {
         DriverB driverB = new DriverB("Ivan", true, 5);
         DriverC driverC = new DriverC("Alexey", true, 7);
         DriverD driverD = new DriverD("Sergey", true, 10);
+        DriverD driverD2 = new DriverD("Sergey", true, 10);
 
         List<Mechanic> mechanics = new ArrayList<>();
         mechanics.add(new Mechanic("Иван", "Иванов", "Тетра"));
@@ -33,6 +31,19 @@ public class Main {
         Truck truck = new Truck("Scania", "Odin", 5.5, driverC, WeightCapacity.N1, mechanics);
         Bus bus = new Bus("Mercedes", "sprinter", 2.2, driverD, PassengerSeats.EXTRALARGE, mechanics);
         Bus bus2 = new Bus("Mercedes", "sprinter", 2.2, driverD, null, mechanics);
+
+        Set<String> driverSet = new HashSet<>();
+        driverSet.add(driverB.getName());
+        driverSet.add(driverC.getName());
+        driverSet.add(driverD.getName());
+        driverSet.add(driverB.getName()); //проверка повторного добавления добавления
+
+        Iterator<String> driverIterator = driverSet.iterator();
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+        }
+
+        System.out.println("______________");
 
         List<Transport> transportList = new ArrayList<>();
         transportList.add(car);
